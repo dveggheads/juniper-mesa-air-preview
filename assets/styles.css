@@ -2094,3 +2094,117 @@ button, input, select, textarea {
     justify-content: center;
   }
 }
+
+/* ==========================================================================
+   Customer Stories — Photos & Proof Gallery
+   ========================================================================== */
+.story-featured-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.story-featured-media {
+  margin: 0;
+  position: sticky;
+  top: 100px;
+}
+
+.story-featured-media img,
+.story-card-media img,
+.proof-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.story-featured-media figcaption,
+.story-card-media figcaption {
+  font-size: 0.78rem;
+  color: var(--color-slate-500);
+  margin-top: 10px;
+  line-height: 1.45;
+}
+
+.story-card-media {
+  margin: 0 0 16px;
+}
+
+.story-card-media img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Proof gallery */
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.proof-card {
+  margin: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 16px 16px 20px;
+  box-shadow: var(--shadow-xs);
+  transition: all var(--transition-fast);
+}
+
+.proof-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.proof-card img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.proof-card figcaption {
+  padding: 16px 6px 0;
+}
+
+.proof-card figcaption strong {
+  display: block;
+  font-size: 0.98rem;
+  color: var(--color-navy);
+  margin-bottom: 4px;
+}
+
+.proof-card figcaption span {
+  font-size: 0.82rem;
+  color: var(--color-slate-500);
+  line-height: 1.45;
+}
+
+@media (max-width: 1024px) {
+  .story-featured-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .story-featured-media {
+    position: static;
+    max-width: 560px;
+  }
+
+  .proof-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .story-featured {
+    padding: 30px 22px;
+  }
+
+  .proof-grid {
+    grid-template-columns: 1fr;
+  }
+}
